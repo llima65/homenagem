@@ -1,0 +1,111 @@
+/* style.css */
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    background-color: #ffebcd;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-in-out;
+}
+
+h1 {
+    color: #ff3366;
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: 'Pacifico', cursive;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.heart {
+    color: #ff3366;
+    animation: heartbeat 1s infinite;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+}
+
+.card {
+    position: relative;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    perspective: 1000px;
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.message {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 10px;
+    transform: rotateY(0deg);
+    transition: transform 0.5s;
+    visibility: hidden;
+}
+
+.card:hover .message {
+    transform: rotateY(180deg);
+    visibility: visible;
+}
+
+.card:hover p {
+    visibility: visible;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+/* Adicione uma regra de mídia para ajustar a largura máxima do container e*/
+@media screen and (max-width: 600px) {
+    .container {
+        max-width: 100%;
+    }
+}
