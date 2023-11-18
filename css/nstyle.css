@@ -77,7 +77,6 @@ p {
 }
 
 .card:hover .message {
-    transform: rotateY(180deg);
     visibility: visible;
 }
 
@@ -108,4 +107,20 @@ p {
     .container {
         max-width: 100%;
     }
+}
+
+
+
+footer {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #ccc;
+    text-align: center;
+}
+
+footer p {
+    font-style: italic;
+    color: #666;
+    font-size: 14px;
 }
